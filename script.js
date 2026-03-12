@@ -112,11 +112,18 @@ function applyTranslations(lang) {
   currentLang = lang;
 }
 
-document.querySelectorAll('.lang-btn').forEach(btn => {
-  btn.addEventListener('click', () => applyTranslations(btn.getAttribute('data-lang')));
-});
+function initI18n() {
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyTranslations(btn.getAttribute('data-lang')));
+  });
+  applyTranslations(currentLang);
+}
 
-applyTranslations(currentLang);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initI18n);
+} else {
+  initI18n();
+}
 
 /* ============================================================
    AXIOM — Neural Network Canvas Animation + Form handling
