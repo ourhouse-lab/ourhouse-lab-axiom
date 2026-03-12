@@ -79,6 +79,46 @@ body {
   background-clip: text;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  font-family: var(--font-head);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.lang-btn:hover { color: var(--orange); }
+
+.lang-btn.active {
+  color: var(--orange);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.lang-sep {
+  color: var(--border);
+  font-size: 0.65rem;
+}
+
 .nav-badge {
   display: flex;
   align-items: center;
