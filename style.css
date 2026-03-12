@@ -93,9 +93,8 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 0;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,107,53,0.25);
-  border-radius: 6px;
+  background: none;
+  border: none;
   position: relative;
   z-index: 200;
 }
@@ -108,7 +107,10 @@ body {
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 0.35rem 0.7rem;
+  padding: 0 0.3rem;
+  font-size: 0.78rem;
+  font-family: var(--font-head);
+  letter-spacing: 0.05em;
   font-family: var(--font-head);
   font-size: 0.65rem;
   font-weight: 700;
@@ -122,21 +124,17 @@ body {
 
 .lang-btn:hover {
   color: var(--orange);
-  background: rgba(255,107,53,0.1);
 }
 
 .lang-btn.active {
   color: var(--orange);
-  background: rgba(255,107,53,0.18);
 }
 
 .lang-sep {
-  display: inline-block;
-  width: 1px;
-  height: 14px;
-  background: rgba(255,107,53,0.25);
-  flex-shrink: 0;
-  align-self: center;
+  color: rgba(255,255,255,0.25);
+  font-size: 0.75rem;
+  padding: 0 0.1rem;
+  user-select: none;
 }
 
 .nav-badge {
