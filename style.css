@@ -523,12 +523,15 @@ body {
   position: relative;
   z-index: 1;
   border-top: 1px solid var(--border);
-  padding: 2.5rem 5vw;
+  padding: 2rem 5vw;
+}
+
+.footer-inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
-  text-align: center;
 }
 
 .footer-logo {
@@ -536,13 +539,22 @@ body {
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-head);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
   color: var(--text-muted);
 }
 
+.footer-logo strong { color: var(--orange); font-weight: 600; }
+
+.footer-year {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+  margin-left: 0.25rem;
+}
+
 .footer-logo-icon {
-  width: 28px; height: 28px;
+  width: 26px; height: 26px;
   background: rgba(255, 107, 53, 0.1);
   border: 1px solid rgba(255, 107, 53, 0.2);
   border-radius: 6px;
@@ -550,20 +562,56 @@ body {
   color: var(--orange);
 }
 
-.footer-logo-icon svg { width: 14px; height: 14px; }
+.footer-logo-icon svg { width: 13px; height: 13px; }
+
+/* Center nav links */
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--text); }
+
+.footer-link-active {
+  color: var(--orange) !important;
+}
+
+/* Right column */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+  min-height: 1.25rem; /* placeholder for social icons */
+}
+
+.footer-social a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-social a:hover { color: var(--orange); }
 
 .footer-copy {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  line-height: 1.8;
+  opacity: 0.7;
+  margin: 0;
 }
-
-.footer-copy a {
-  color: var(--orange);
-  text-decoration: none;
-}
-
-.footer-copy a:hover { text-decoration: underline; }
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {

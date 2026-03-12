@@ -44,6 +44,7 @@ const TRANSLATIONS = {
     'status.planned2': 'Planned',
     'status.planned3': 'Planned',
     'footer.copy': '© 2025 OurHouse-Lab. Axiom is a project under active development.',
+    'footer.rights': 'All rights reserved',
   },
   pt: {
     'meta.title': 'Axiom — Seu Companheiro de IA',
@@ -87,6 +88,7 @@ const TRANSLATIONS = {
     'status.planned2': 'Planejado',
     'status.planned3': 'Planejado',
     'footer.copy': '© 2025 OurHouse-Lab. Axiom é um projeto em desenvolvimento ativo.',
+    'footer.rights': 'Todos os direitos reservados',
   },
 };
 
