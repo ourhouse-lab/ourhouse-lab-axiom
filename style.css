@@ -81,47 +81,62 @@ body {
 
 .nav-right {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .lang-toggle {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
   align-items: center;
   gap: 0;
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,107,53,0.2);
+  border: 1px solid rgba(255,107,53,0.25);
   border-radius: 6px;
-  overflow: hidden;
+  position: relative;
+  z-index: 200;
 }
 
 .lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 0.3rem 0.6rem;
+  padding: 0.35rem 0.7rem;
   font-family: var(--font-head);
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   transition: color 0.2s, background 0.2s;
   line-height: 1;
+  white-space: nowrap;
+  pointer-events: all;
+  user-select: none;
 }
 
-.lang-btn:hover { color: var(--orange); background: rgba(255,107,53,0.08); }
+.lang-btn:hover {
+  color: var(--orange);
+  background: rgba(255,107,53,0.1);
+}
 
 .lang-btn.active {
   color: var(--orange);
-  background: rgba(255, 107, 53, 0.15);
+  background: rgba(255,107,53,0.18);
 }
 
 .lang-sep {
+  display: inline-block;
   width: 1px;
-  height: 16px;
-  background: rgba(255,107,53,0.2);
-  display: block;
+  height: 14px;
+  background: rgba(255,107,53,0.25);
   flex-shrink: 0;
+  align-self: center;
 }
 
 .nav-badge {
