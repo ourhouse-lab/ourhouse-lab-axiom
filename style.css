@@ -631,6 +631,10 @@ body {
 
   .features-grid { grid-template-columns: 1fr 1fr; }
 
+}
+
+/* Status bar stays on one row — override only on very small screens */
+@media (max-width: 600px) {
   .status-inner { flex-direction: column; gap: 0.75rem; }
   .status-divider { display: none; }
 }
