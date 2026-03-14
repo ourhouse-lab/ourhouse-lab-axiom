@@ -302,6 +302,8 @@ if (document.readyState === 'loading') {
 
 // ---- Email form ----
 (function () {
+  const DEVHUB_API = 'https://devhub.ourhouse-lab.com/api/trpc/interestEmails.subscribe';
+
   const form    = document.getElementById('interest-form');
   const input   = document.getElementById('email-input');
   const success = document.getElementById('form-success');
@@ -318,14 +320,21 @@ if (document.readyState === 'loading') {
     btn.disabled = true;
 
     try {
-      const existing = JSON.parse(localStorage.getItem('axiom_interests') || '[]');
-      if (!existing.includes(email)) {
-        existing.push(email);
-        localStorage.setItem('axiom_interests', JSON.stringify(existing));
-      }
-    } catch (_) {}
-
-    await new Promise(r => setTimeout(r, 800));
+      await fetch(DEVHUB_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: { email: email, source: 'axiom' } }),
+      });
+    } catch (_) {
+      // Fallback: save locally if API is unreachable
+      try {
+        const existing = JSON.parse(localStorage.getItem('axiom_interests') || '[]');
+        if (!existing.includes(email)) {
+          existing.push(email);
+          localStorage.setItem('axiom_interests', JSON.stringify(existing));
+        }
+      } catch (_) {}
+    }
 
     form.style.display = 'none';
     success.classList.add('visible');
